@@ -1,3 +1,10 @@
+#[derive(Debug)]
+enum SpreadsheetCell {
+    Int(i32),
+    Float(f64),
+    Text(String),
+}
+
 fn main() {
     // let v: Vec<i32> = Vec::new();
     // let v = vec![1, 2, 3];
@@ -11,8 +18,62 @@ fn main() {
     let v = vec![1, 2, 3, 4, 5];
     let third: &i32 = &v[2];
     println!("The third element is {}", third);
+
     match v.get(2) {
         Some(third) => println!("The third element is {}", third),
         None => println!("There is no third element."),
     }
+
+    // let does_not_exist = &v[100];
+    let does_not_exist = v.get(100);
+    println!("{:?}", does_not_exist);
+
+    // let mut v = vec![1, 2, 3, 4, 5];
+    // let first = &v[0]; // immutable borrow
+    // v.push(6); // mutable borrow
+    // println!("The first element is: {}", first);
+
+    let v = vec![100, 32, 57];
+    for i in &v {
+        println!("{}", i);
+    }
+
+    let mut v = vec![100, 32, 57];
+    for i in &mut v {
+        *i += 50;
+    }
+
+    for i in &mut v {
+        println!("{}", i);
+    }
+
+    let row = vec![
+        SpreadsheetCell::Int(3),
+        SpreadsheetCell::Text(String::from("blue")),
+        SpreadsheetCell::Float(10.12),
+    ];
+
+    for r in &row {
+        println!("{:?}", r);
+    }
+
+    // let mut s = String::new();
+
+    // let data = "initial contents";
+    // let s = data.to_string();
+
+    // the method also works on a literal directly:
+    // let s = "initial contents".to_string();
+    // let s = String::from("initial contents");
+
+    let mut s = String::from("foo");
+    s.push_str("bar");
+
+    let mut s1 = String::from("foo");
+    let s2 = "bar";
+    s1.push_str(s2);
+    println!("s2 is {}", s2);
+
+    let mut s = String::from("lo");
+    s.push('l');
 }
