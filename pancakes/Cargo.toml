@@ -1,11 +1,10 @@
 [package]
-name = "guessing_game"
-license = "MIT"
+name = "pancakes"
 version = "0.1.0"
-authors = ["Hen.Lee leehenry303@gmail.com"]
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-rand = "0.8.5"
+hello_macro = { path = "../hello_macro" }
+hello_macro_derive = { path = "../hello_macro/hello_macro_derive" }
