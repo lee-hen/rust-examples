@@ -4,7 +4,7 @@ use actix_web::{
     dev::{forward_ready, Service, ServiceRequest, ServiceResponse, Transform},
     Error,
 };
-use futures_util::future::LocalBoxFuture;
+use futures_util::future::{LocalBoxFuture, FutureExt};
 
 // There are two steps in middleware processing.
 // 1. Middleware initialization, middleware factory gets called with
@@ -67,9 +67,20 @@ async fn main() -> std::io::Result<()> {
     use actix_web::{web, App, HttpServer};
 
     HttpServer::new(|| {
-        App::new().wrap(SayHi).service(
+        App::new()
+        .wrap(SayHi)
+        .service(
             web::resource("/")
                 .to(|| async { "Hello, middleware! Check the console where the server is run." }),
+        ).wrap_fn(|req, srv| {
+            println!("Hi from start. You requested: {}", req.path());
+            srv.call(req).map(|res| {
+                println!("Hi from response");
+                res
+            })
+        }).route(
+            "/index.html",
+            web::get().to(|| async { "Hello, middleware!" }),
         )
     })
     .bind(("127.0.0.1", 8080))?
