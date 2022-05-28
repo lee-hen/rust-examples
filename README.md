@@ -1,4 +1,4 @@
-# [The Rust Programming Language](https://doc.rust-lang.org/book/)
+# Rust Examples
 
 ## [Get started](https://www.rust-lang.org/learn/get-started)
 
