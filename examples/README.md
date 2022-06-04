@@ -20,7 +20,7 @@ terms of the MIT license. See [LICENSE-MIT](LICENSE-MIT) for details.
   denominators.
 
 - The Mandelbrot plotting program has its own repository, at
-  `https://github.com/ProgrammingRust/mandelbrot`. This repository contains
+  `https://github.com/lee-hen/rust-examples/mandelbrot`. This repository contains
   several branches, each showing a different implementation strategy. The
   `single-threaded` branch holds the code for the single-threaded version, and
   the `bands` branch holds the multi-threaded version. Chapter 19,
@@ -90,14 +90,14 @@ terms of the MIT license. See [LICENSE-MIT](LICENSE-MIT) for details.
 ## Chapter 19: Concurrency
 
 - The search engine used as a running example throughout the book has its own
-  repository, at `https://github.com/ProgrammingRust/fingertips`.
+  repository, at `https://github.com/lee-hen/rust-examples/fingertips`.
 
 - The Mandelbrot set plotter discussed in the section “Revisiting the Mandelbrot
-  Set” also has its own repository, at `https://github.com/ProgrammingRust/mandelbrot`.
+  Set” also has its own repository, at `https://github.com/lee-hen/rust-examples/mandelbrot`.
   The repository includes several branches exploring different implementations;
   see the repository's [README.md][mandel-readme] file for details.
 
-[mandel-readme]: https://github.com/ProgrammingRust/mandelbrot/blob/master/README.md
+[mandel-readme]: https://github.com/lee-hen/rust-examples/mandelbrot//README.md
 
 ## Chapter 20: Asynchronous Programming
 
@@ -121,7 +121,7 @@ terms of the MIT license. See [LICENSE-MIT](LICENSE-MIT) for details.
   executor, which demonstrates polling and waiting for wakers to be invoked.
 
 - The chat client and server used as an extended example are in their own
-  repository, at `https://github.com/ProgrammingRust/async-chat`.
+  repository, at `https://github.com/lee-hen/rust-examples/async-chat`.
 
 ## Chapter 21: Macros
 
