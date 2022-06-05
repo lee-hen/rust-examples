@@ -9,3 +9,5 @@
 ## [actix-web](https://actix.rs/docs/)
 
 ## [Asynchronous Programming in Rust](https://rust-lang.github.io/async-book/index.html)
+
+## [Programming Rust](https://github.com/lee-hen/ctci/blob/main/book/programming_rust.pdf)
