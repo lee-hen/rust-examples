@@ -8,6 +8,7 @@ edition = "2018"
 num = "0.4"
 image = "0.13.0"
 rayon = "1"
+crossbeam = "0.8"
 
 [[bin]]
 name = "single-threaded"
