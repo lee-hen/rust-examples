@@ -6,18 +6,18 @@ The book shows several different versions of this program: single- and multi-thr
 
 Each of these versions appears on a different branch in this repository:
 
-*   [Branch `single-threaded`](https://github.com/ProgrammingRust/mandelbrot/tree/single-threaded)
+*   [`single-threaded`](https://github.com/lee-hen/rust-examples/mandelbrot/bin/single-threaded)
     is the base version of the program. It does all the work on the main
     thread. This is the first version shown in the "Tour of Rust" chapter.
 
-*   [Branch `bands`](https://github.com/ProgrammingRust/mandelbrot/tree/bands)
+*   [`bands`](https://github.com/lee-hen/rust-examples/mandelbrot/bin/bands)
     splits the plotting area up into eight bands, and assigns one thread to
     each. This often makes poor use of the threads, because some bands take
     significantly longer than others to complete: once a fast thread completes
     its band, its CPU goes idle while its less fortunate brethren are still hard
     at work. This is the final version shown in the Tour.
 
-*   [Branch `task-queue`](https://github.com/ProgrammingRust/mandelbrot/tree/task-queue)
+*   [`task-queue`](https://github.com/lee-hen/rust-examples/mandelbrot/bin/task-queue)
     gets an almost perfect linear speedup from its threads. It splits
     the plotting area up into many more bands, and then has threads draw
     bands from a common pool until the pool is empty. When a thread
@@ -25,7 +25,7 @@ Each of these versions appears on a different branch in this repository:
     take different amounts of time to render, the problem cited above
     still occurs, but on a much smaller scale. This version is not shown in the book.
 
-*   [Branch `lockfree`](https://github.com/ProgrammingRust/mandelbrot/tree/lockfree)
+*   [`lockfree`](https://github.com/lee-hen/rust-examples/mandelbrot/bin/lockfree)
     uses Rust's atomic types to implement a lock-free iterator type, and
     uses that to dole out bands from the pool instead of a
     mutex-protected count. On Linux, this is no faster than the
@@ -33,7 +33,7 @@ Each of these versions appears on a different branch in this repository:
     and unlocking an uncontended mutex *is* simply a pair of atomic
     operations. This version is also not shown in the book.
 
-*   [Branch `rayon`](https://github.com/ProgrammingRust/mandelbrot/tree/rayon)
+*   [`rayon`](https://github.com/lee-hen/rust-examples/mandelbrot/bin/rayon)
     uses the Rayon library instead of Crossbeam. Rayon provides a *parallel
     iterator* API that makes our code much simpler. It looks a lot like Rust
     code that uses plain old iterators. This is the final version shown in the

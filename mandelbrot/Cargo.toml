@@ -8,3 +8,18 @@ edition = "2018"
 num = "0.4"
 image = "0.13.0"
 rayon = "1"
+
+[[bin]]
+name = "single-threaded"
+
+[[bin]]
+name = "bands"
+
+[[bin]]
+name = "task-queue"
+
+[[bin]]
+name = "lockfree"
+
+[[bin]]
+name = "rayon"
